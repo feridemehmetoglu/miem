@@ -11,7 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160413133524) do
+ActiveRecord::Schema.define(version: 20160413144103) do
+
+  create_table "education_pre_records", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "education_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "education_pre_records", ["education_id"], name: "index_education_pre_records_on_education_id"
+  add_index "education_pre_records", ["user_id"], name: "index_education_pre_records_on_user_id"
+
+  create_table "education_records", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "education_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "education_records", ["education_id"], name: "index_education_records_on_education_id"
+  add_index "education_records", ["user_id"], name: "index_education_records_on_user_id"
 
   create_table "educations", force: :cascade do |t|
     t.string   "name"
