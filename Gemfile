@@ -46,3 +46,4 @@ group :development do
 end
 
   gem 'devise', git: 'git@github.com:plataformatec/devise.git'
+  
