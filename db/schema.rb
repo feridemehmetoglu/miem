@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160414074324) do
+ActiveRecord::Schema.define(version: 20160414124100) do
 
   create_table "certificates", force: :cascade do |t|
     t.string   "name"
@@ -59,6 +59,8 @@ ActiveRecord::Schema.define(version: 20160414074324) do
     t.boolean  "send_email"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "creater_id"
+    t.integer  "quota"
   end
 
   create_table "exams", force: :cascade do |t|
