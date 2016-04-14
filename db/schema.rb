@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160414072458) do
+ActiveRecord::Schema.define(version: 20160414074324) do
+
+  create_table "certificates", force: :cascade do |t|
+    t.string   "name"
+    t.date     "validity_date"
+    t.date     "cert_date"
+    t.integer  "exam_id"
+    t.integer  "user_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "certificates", ["exam_id"], name: "index_certificates_on_exam_id"
+  add_index "certificates", ["user_id"], name: "index_certificates_on_user_id"
 
   create_table "education_pre_records", force: :cascade do |t|
     t.integer  "user_id"
@@ -60,6 +73,16 @@ ActiveRecord::Schema.define(version: 20160414072458) do
 
   add_index "exams", ["education_id"], name: "index_exams_on_education_id"
   add_index "exams", ["user_id"], name: "index_exams_on_user_id"
+
+  create_table "job_educations", force: :cascade do |t|
+    t.integer  "job_id"
+    t.integer  "education_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "job_educations", ["education_id"], name: "index_job_educations_on_education_id"
+  add_index "job_educations", ["job_id"], name: "index_job_educations_on_job_id"
 
   create_table "jobs", force: :cascade do |t|
     t.string   "name"
