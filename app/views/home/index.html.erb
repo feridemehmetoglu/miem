@@ -1,41 +1,68 @@
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">Brand</a>
-    </div>
+<div class="container home">
+ 
+<div class="div">
+  <span class="home-text">
 
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Link</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
-          </ul>
-        </li>
-      </ul>
-      <form class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <input class="form-control" placeholder="Search" type="text">
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+    Makine Mühendisleri Odası Eğitim Portalına hoşgeldiniz. Bu portal üzerinde profilinizi oluşturabilir, meslek içi eğitimlere katılabilir, sınavlara başvurabilir ve onaylı sertifikalar ilemesleğinizde uzmanlaşabilirsiniz.</span>
+    <br>
+    <br>
+    
+     <p><a class="btn btn-primary btn-lg">Başlayalım!</a></p>
+</div>
+<div class="div">
+  <img class="home-image" src="assets/miem-home.png">
+</div>  
+</div>
+
+
+ <div class="container">
+  <h2><span>Son Eklenen Eğitimler</span></h2>
+  <div class="row education">
+</div>
+  
+  <table class="table table-striped  ">
+  <thead>
+    <tr>
+      
+      <th>Eğitim</th>
+      <th>Şube</th>
+      <th>Tarih</th>
+      <th>Süre</th>
+      <th>Kontenjan</th>
+       <th>Kayıt</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      
+      <td>Enerji kimlik Belgesi Uzmanı</td>
+      <td>Kayseri</td>
+      <td>25.04.2016</td>
+      <td>2 gün</td>
+      <td>25</td>
+      <td><%= link_to 'Başvur'%></td>
+    </tr>
+     <tr>
+      
+      <td>Yangın Tesisatı Mühendis Yetkilendirme Kursu</td>
+      <td>Ankara</td>
+      <td>12.06.2016</td>
+      <td>3 gün</td>
+      <td>30</td>
+      <td><input id="accept" name="accept" type="checkbox" value="1" /></td>
+    </tr>
+   
+  </tbody>
+
+</table> 
+
+<ul class="pagination pagination-sm">
+  <li class="disabled"><a href="#">&laquo;</a></li>
+  <li class="active"><a href="#">1</a></li>
+  <li><a href="#">2</a></li>
+  <li><a href="#">3</a></li>
+  <li><a href="#">4</a></li>
+  <li><a href="#">5</a></li>
+  <li><a href="#">&raquo;</a></li>
+</ul>
+</div> 
