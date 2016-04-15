@@ -1,4 +1,7 @@
 class EducationsController < ApplicationController
+ before_action :authenticate_user!
+ 
+ if current_user.admin? 
   def index
 
   end

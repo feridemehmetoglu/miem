@@ -1,0 +1,25 @@
+<div class="container">
+    
+      <div class="col-md-12">
+        <div class="row">
+          
+            
+             <div class="panel panel-default">
+            <table class="table">
+            <th>Id</th>
+            <th>Meslek Adı</th>
+            <th>Ayarlar</th>
+            <% @jobs.each do |job| %>
+            <tr>
+             <td><%=job.id%></td>
+             <td><%=job.name%></td>
+             <td><%= link_to "Edit", edit_job_path(job) , class: "btn btn-primary" %></td>       
+            </tr>
+             <% end %>
+            </div> 
+           </table>
+           
+            
+        </div>
+    </div>
+  </div>
