@@ -1,9 +1,8 @@
 class EducationsController < ApplicationController
  before_action :set_education, only: [:show, :edit, :update, :destroy]
- before_action :authenticate_user!
+ #before_action :authenticate_user!
  
- if current_user.admin? 
->>>>>>> 0a7d49ed1b911b6e8b741a54854b81513bca88c3
+
   def index
     @educations = Education.all
   end
