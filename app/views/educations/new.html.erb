@@ -8,9 +8,7 @@
     <div class="form-horizontal">        
      <h2></h2>
      <%= form_for @education  do |f| %>
-
     <!--  #f.hidden_field :creater_id, value: current_user.id  -->
-    
      <div class="form-group">
        <label class="col-lg-2 control-label">Eğitim Adı/liste eklicez </label> 
        <div class="col-lg-10">
@@ -60,6 +58,7 @@
         <%= f.date_field :finish_date ,class: "form-control" %> 
       </div>
     </div>  
+
     <div class="form-group">
        <label class="col-lg-2 control-label">Toplam Saat</label> 
        <div class="col-lg-4">
@@ -76,14 +75,24 @@
       <label class="control-label"> <%= f.check_box :send_email ,class: "checkbox" %> Eğitime ön kayıt yapanlara mail ve sms gönderilsin mi ?</label>
      </div> 
     </div>
- 
-   meslekler listelencek
-    
+     
+     <div class="form-group">
+       <% @jobs.each  do |job| %>
+        <%= check_box_tag("job_ids[]",job.id) %>
+        <%= label_tag("job",job.name ) %><br>
+       <% end %>
+    </div>
+
 
    <div class="form-group">
       <%= f.submit 'Eğitimi Kaydet' ,class: "btn btn-primary"%>
    </div>
     <% end %>
+
+ 
+
+    
+
   </div>
  </div>
 </div>
