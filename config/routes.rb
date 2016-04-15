@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   
 
+  get 'admins/index'
+  get 'admins/admin_assign'
+
   devise_for :admins
   devise_for :users
  
