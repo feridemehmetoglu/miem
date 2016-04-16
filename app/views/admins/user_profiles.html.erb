@@ -1,0 +1,32 @@
+
+
+  <div class="container">
+
+  	<table class="table">
+  <thead>
+    <tr>
+      
+      <th>Name</th>
+      <th>Surname</th>
+      <th>Status</th>
+      
+    </tr>
+  </thead>
+  <% @user_profiles.each  do |up|%>
+
+  <tbody>
+    <tr>
+      <td><%=up.name%></td>
+      <td><%=up.surname %></td>
+      <td><%=up.admin %></td>
+      <td>
+         
+      </td>
+      <td><%= link_to 'Edit',edit_user_profile_path(up)%></td>
+    </tr>
+   
+  </tbody>
+ <% end %>
+</table> 
+   
+  </div>
