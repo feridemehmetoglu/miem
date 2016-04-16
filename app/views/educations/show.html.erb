@@ -1,0 +1,89 @@
+
+<div class="container">
+  <div class="row">
+    <h1>Eğitim Hakkında </h1>
+    <p>Eğitime Burdan Burdan Katılabilirsiniz</p>
+
+    <div class="col-md-8">
+      <div class="form-horizontal">        
+   
+            <div class="form-group">
+               <label class="col-lg-2 control-label">Eğitim Adı </label> 
+                 <div class="col-lg-10">
+                  <%= @education.name  %> 
+                 </div>
+            </div>
+
+            <div class="form-group">
+               <label class="col-lg-2 control-label">Eğitim Açıklaması </label> 
+                 <div class="col-lg-10">
+                  <%= @education.description  %> 
+                </div>
+            </div>
+
+            <div class="form-group">
+               <label class="col-lg-2 control-label">Eğitim Amacı </label> 
+                 <div class="col-lg-10">
+                  <%= @education.purpose  %> 
+                 </div>
+            </div>
+
+            <div class="form-group">
+               <label class="col-lg-2 control-label">Eğitim Yeri </label> 
+                 <div class="col-lg-10">
+                  <%= @education.location  %> 
+                 </div>
+            </div>
+
+            <div class="form-group">
+               <label class="col-lg-2 control-label">Eğitim Ücreti</label> 
+                <div class="col-lg-4">
+                 <%= @education.fee  %> 
+                </div>
+               <label class="col-lg-3 control-label">Sınav/Belge Ücreti</label> 
+                <div class="col-lg-3">
+                 <%= @education.exam_fee  %> 
+                </div>
+            </div>
+
+            <div class="form-group">
+               <label class="col-lg-2 control-label">Başlangıç Tarihi</label> 
+                <div class="col-lg-4">
+                 <%= @education.start_date %> 
+                </div>
+               <label class="col-lg-2 control-label">Bitiş Tarihi</label> 
+                <div class="col-lg-4">
+                 <%= @education.finish_date %> 
+                </div>
+            </div>  
+
+            <div class="form-group">
+               <label class="col-lg-2 control-label">Toplam Saat</label> 
+                <div class="col-lg-4">
+                  <%= @education.total_hour  %> 
+                </div>
+                <label class="col-lg-3 control-label">Kontenjan</label> 
+                <div class="col-lg-3">
+                  <%= @education.quota  %> 
+                </div>
+            </div> 
+
+
+            <div class="form-group">
+              <div class="col-lg-4 ">
+                <h3>Bu Meslekler Katılabilir</h3>
+                 <% @education.jobs.each  do |job| %>
+                  <%= job.name %><br>
+                 <% end %>
+             </div>
+             <div class="col-lg-4 "></div>
+             <div class="col-lg-4 "></div>
+            </div>
+
+            <%= link_to 'Eğitime Kayıt ol', education_record_path(@education) %>
+
+          
+      </div>
+    </div>
+  </div>
+</div>

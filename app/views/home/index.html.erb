@@ -26,32 +26,23 @@
       
       <th>Eğitim</th>
       <th>Şube</th>
-      <th>Tarih</th>
-      <th>Süre</th>
+      <th>Başlama Tarihi</th>
+      <th>Bitiş Tarihi</th>
       <th>Kontenjan</th>
        <th>Kayıt</th>
     </tr>
   </thead>
   <tbody>
+    <% @education.each do |education| %>
     <tr>
-      
-      <td>Enerji kimlik Belgesi Uzmanı</td>
-      <td>Kayseri</td>
-      <td>25.04.2016</td>
-      <td>2 gün</td>
-      <td>25</td>
-      <td><%= link_to 'Başvur'%></td>
+      <td><%=education.name%></td>
+      <td><%=education.location%></td>
+      <td><%=education.start_date%></td>
+      <td><%=education.finish_date%></td>
+      <td><%=education.quota%></td>
+      <td><%= link_to 'Başvur', education_path(education)%></td>
     </tr>
-     <tr>
-      
-      <td>Yangın Tesisatı Mühendis Yetkilendirme Kursu</td>
-      <td>Ankara</td>
-      <td>12.06.2016</td>
-      <td>3 gün</td>
-      <td>30</td>
-      <td><input id="accept" name="accept" type="checkbox" value="1" /></td>
-    </tr>
-   
+      <% end %>
   </tbody>
 
 </table> 
