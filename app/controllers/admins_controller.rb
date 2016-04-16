@@ -1,9 +1,15 @@
 class AdminsController < ApplicationController
 	before_action :authenticate_user!
+
   def index
   	
   end
-  def admin_assign
+
+  def user_profiles
   	@user_profiles = UserProfile.all
   end
+
+  
+ 
+
 end

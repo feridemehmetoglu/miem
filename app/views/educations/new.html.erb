@@ -1,5 +1,5 @@
 
-<% if current_user && current_user.admin?%> 
+<% if current_user && current_user.user_profile.admin?%> 
 
 <div class="container">
   <div class="row">
@@ -10,8 +10,6 @@
     <div class="form-horizontal">        
      <h2></h2>
      <%= form_for @education  do |f| %>
-
-     <!--  #f.hidden_field :creater_id, value: current_user.id  -->
 
      <div class="form-group">
        <label class="col-lg-2 control-label">Eğitim Adı/liste eklicez </label> 
@@ -52,6 +50,7 @@
 </div>
 </div>
 
+
 <div class="form-group">
  <label class="col-lg-2 control-label">Başlangıç Tarihi</label> 
  <div class="col-lg-4">
@@ -88,6 +87,48 @@ meslekler listelencek
 <% end %>
 </div>
 </div>
-</div>
-</div>
+
+   <div class="form-group">
+       <label class="col-lg-2 control-label">Başlangıç Tarihi</label> 
+       <div class="col-lg-4">
+        <%= f.date_field :start_date ,class: "form-control" %> 
+      </div>
+      <label class="col-lg-3 control-label">Bitiş Tarihi</label> 
+      <div class="col-lg-3">
+        <%= f.date_field :finish_date ,class: "form-control" %> 
+      </div>
+    </div>  
+
+    <div class="form-group">
+       <label class="col-lg-2 control-label">Toplam Saat</label> 
+       <div class="col-lg-4">
+        <%= f.text_field :total_hour ,class: "form-control" %> 
+      </div>
+      <label class="col-lg-3 control-label">Kontenjan</label> 
+      <div class="col-lg-3">
+        <%= f.text_field :quota ,class: "form-control" %> 
+      </div>
+    </div> 
+
+    <div class="form-group">
+     <div class="checkbox  ">
+      <label class="control-label"> <%= f.check_box :send_email ,class: "checkbox" %> Eğitime ön kayıt yapanlara mail ve sms gönderilsin mi ?</label>
+     </div> 
+    </div>
+     
+     <div class="form-group">
+       <% @jobs.each  do |job| %>
+        <%= check_box_tag("job_ids[]",job.id) %>
+        <%= label_tag("job",job.name ) %><br>
+       <% end %>
+    </div>
+
+
+   <div class="form-group">
+      <%= f.submit 'Eğitimi Kaydet' ,class: "btn btn-primary"%>
+   </div>
+    <% end %>
+
+  </div>
+ </div>
 <% end %>

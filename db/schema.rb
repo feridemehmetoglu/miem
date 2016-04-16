@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160415102807) do
+ActiveRecord::Schema.define(version: 20160415141727) do
 
   create_table "certificates", force: :cascade do |t|
     t.string   "name"
@@ -101,6 +101,7 @@ ActiveRecord::Schema.define(version: 20160415102807) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.integer  "user_id"
+    t.boolean  "admin"
   end
 
   add_index "user_profiles", ["user_id"], name: "index_user_profiles_on_user_id"

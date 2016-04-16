@@ -1,0 +1,42 @@
+<div class="container">
+<table class="table">
+  <thead>
+    <tr>
+      
+      <th>Eğitim Adı</th>
+      <th>Açıklama</th>
+      <th>Amaç</th>
+      <th>Konum</th>
+      <th>Ücret</th>
+      <th>Sınav Ücreti</th>
+      <th>Başlama T.</th>
+      <th>Bitiş T.</th>
+      <th>Top.Süre</th>
+      
+    </tr>
+  </thead>
+  <% @pre_education.each  do |pre|%>
+
+  <tbody>
+    <tr>
+      <td><%=pre.name%></td>
+      <td><%=pre.description %></td>
+      <td><%=pre.purpose %></td>
+      <td><%=pre.location%></td>
+      <td><%=pre.fee%></td>
+      <td><%=pre.exam_fee %></td>
+      <td><%=pre.start_date %></td>
+      <td><%=pre.finish_date%></td>
+      <td><%=pre.total_hour%></td>
+	  <td>
+	   <%#= check_box %>
+		
+       </td>
+
+      <td><%= link_to 'Ön Kayıt'%></td>
+    </tr>
+   
+  </tbody>
+ <% end %>
+</table> 
+</div>

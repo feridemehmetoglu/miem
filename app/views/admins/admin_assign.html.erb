@@ -1,5 +1,0 @@
-
-<%= @user_profiles.each do |all|%>
- <%= collection_check_boxes :user_profiles, :user_id, UserProfile.all , :id,:name, {} , { multiple: true} %>
-
- <% end %> 
