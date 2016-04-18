@@ -13,6 +13,7 @@ Rails.application.routes.draw do
  
   resources :home
   resources :educations
+  resources :education_records
 
   resources :admins, only:[:index]
 

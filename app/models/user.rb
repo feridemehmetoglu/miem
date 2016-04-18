@@ -5,9 +5,11 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   
   has_many :exams
+  
+  has_many :education_records
+  has_many :educations, through: :education_records      
+  
   has_many :education_pre_records
-
-  has_many :education, through: :education_pre_records   
+  
   has_one :user_profile   
-
 end

@@ -5,15 +5,11 @@ class EducationPreRecordsController < ApplicationController
 		@pre_education = Education.where("finish_date <=?", Date.yesterday) #finish_date dün ve daha önce olan tarihdeki eğitimleri getirir
 	end
 
-	def new
-		@pre_record = EducationPreRecord.new
-	end
-
 	def show
 
-   education = Education.find(params[:id])
-   EducationPreRecord.create(user_id: current_user.id , education_id: education.id  ) 
-   redirect_to root_path  
+   @pre = Education.find(params[:id])
+   EducationPreRecord.create(user_id: current_user.id , education_id: @pre.id  ) 
+   redirect_to root_path
 		
 	end
 
