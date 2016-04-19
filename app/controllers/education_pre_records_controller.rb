@@ -8,8 +8,10 @@ class EducationPreRecordsController < ApplicationController
 	def show
 
    @pre = Education.find(params[:id])
-   EducationPreRecord.create(user_id: current_user.id , education_id: @pre.id  ) 
-   redirect_to root_path
+   if EducationPreRecord.create(user_id: current_user.id , education_id: @pre.id  ) 
+   redirect_to education_pre_records_path , notice: "Önkaydınız yapılmıştır!"
+
+   end
 		
 	end
 

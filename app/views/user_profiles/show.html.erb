@@ -1,0 +1,28 @@
+<div class="container">   
+ <div class="row">
+         <div class="col-sm-6">
+            <div class="row">   
+
+
+                     <% if flash[:notice] %>
+                     <div class="notice"><%= flash[:notice] %></div>
+                      <% end %>
+  <form class="form-horizontal">
+  <fieldset>
+    <legend> Profilinize Hoşgeldiniz Sayın, <%= @user_profile.name%></legend>
+    <div class="form-group">
+      <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+      <div class="col-lg-10">
+        <input class="form-control" id="inputEmail" placeholder="Email" type="text">
+      </div>
+    </div>
+     
+                
+    </div>
+               <%= link_to "Profilimi Düzenle",edit_user_profile_path(@user_profile), class: "btn btn-info" %>
+</fieldset>
+</form>
+           </div>
+        </div>
+    </div>
+</div>    <!-- container -->

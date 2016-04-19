@@ -17,13 +17,10 @@ class EducationsController < ApplicationController
   def edit
   end
 
-
   def create
    
     @education = Education.new(education_params)
     
-  
-
       if @education.save
           education = Education.last
           jobeducation = params.require(:job_ids)

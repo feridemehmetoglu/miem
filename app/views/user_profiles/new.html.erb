@@ -1,0 +1,52 @@
+ <div class="container">
+    <div class="row">
+        <ul class="margin">
+            <li class="nav navbar-nav navbar-right">
+                <% if user_signed_in? %>
+                    <p><%= link_to "Çıkış",destroy_user_session_path, :method => 'delete', class:"btn btn-danger" %></p>
+                    <br>
+                 <%end%>
+            </li>
+        </ul>
+    </div> <!-- / row -->
+
+    <div class="row">
+       <div class="form-group">        
+           <h2>PROFİL EKLE</h2>
+
+
+
+             <%= form_for @user_profile, html: { multipart: true } do |f| %>
+
+                     <% if flash[:notice] %>
+                     <div class="notice"><%= flash[:notice] %></div>
+                      <% end %>
+                
+                <%= f.hidden_field :user_id, value: current_user.id %>
+
+                   <div class="col-md-2"> <label>AD </label><br></div>
+                   <div class="col-md-10"><%= f.text_field :name ,class: "form-control" %></div>
+                </p>
+                <p>
+                    <%= f.label "Soyad:" %><br>
+                    <%= f.text_field :surname ,class: "form-control"  %>
+                </p>
+                <p>
+                    <%= f.label "Email: " %><br>
+                    <%= f.text_field :email ,class: "form-control"  %>
+                </p>
+                <p>
+                    <%= f.label "Cep Telefonu: " %><br>
+                    <%= f.text_field :mobile_phone ,class: "form-control"  %>
+                </p>
+                <p>
+                    <%= f.label "Kayıt No: " %><br>
+                    <%= f.text_field :register_no ,class: "form-control"  %>
+                </p>
+                <p>
+                    <%= f.submit 'PROFİL GÜNCELE' ,class: "btn btn-primary"%>
+                </p>
+            <% end %>
+       </div>
+    </div>
+</div>

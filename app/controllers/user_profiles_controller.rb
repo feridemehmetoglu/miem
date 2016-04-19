@@ -6,18 +6,50 @@ class UserProfilesController < ApplicationController
   	@users= User.all
 
   end
+  def new
+    @user = User.find(current_user.id)
+    @userprofile = UserProfile.where(user_id: @user.id)
+
+    unless @userprofile.any? #userprofile yoksa
+      @userprofile = UserProfile.new
+
+       else 
+        redirect_to user_profile_path(@userprofile)
+      end
+  end
+
+  def create
+    @userprofile = UserProfile.new(user_profile_params)
+    @userprofile.save
+    redirect_to root_path
+
+    
+  end
+
+  def show
+    @user = User.find(current_user.id)
+    @user_profile = UserProfile.find_by(user_id: @user.id)
+
+  end
+
+
   def update
   	@user_profile = UserProfile.find(params[:id])
   	if @user_profile.update(user_profile_params)
-        redirect_to admins_user_profiles_path
+        redirect_to user_profile_path
       else
         render 'edit' 
       end
    
   end
 
+
+# def edit
+#     @author = Author.find(current_author.id)
+#     @author_profile = AuthorProfile.find_by(author_id: @author.id)
+#     end
   def edit
-  	@user= User.find(params[:id])
+  	@user= User.find(current_user.id)
   	@user_profile = UserProfile.find(params[:id])
   end
   

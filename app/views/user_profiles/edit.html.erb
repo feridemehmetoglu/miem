@@ -1,20 +1,27 @@
 <div class="container">
 	<div class="row">
+		<legend> Profilinize Hoşgeldiniz Sayın, <%= @user_profile.name%></legend>
 	 <%= form_for (@user_profile), html: { multipart: true } do |f| %>
         
-		<p>
-			<%= f.label "Name " %><br>
-			<%= f.text_field :name %>
-		</p>
-		<p>
-			<%= f.label "Surname" %><br>
-			<%= f.text_field :surname %>
-		</p>
-		<p>
-			<%= f.label "Email" %><br>
-			<%= f.text_field :email %>
-		</p>
-		<p>
+		<div class="form-group">
+			<%= f.label "Name " ,class:"col-lg-2 control-label"%>
+			<div class="col-lg-10"><%= f.text_field :name ,class:"form-control"%></div>
+		</div><br>
+
+		<div class="form-group">
+			<%= f.label "Surname" ,class:"col-lg-2 control-label"%><br>
+			<div class="col-lg-10"><%= f.text_field :surname ,class:"form-control"%></div>
+		</div><br>
+
+			<div class="form-group">
+			<%= f.label "Email" ,class:"col-lg-2 control-label"%><br>
+			<div class="col-lg-10"><%= f.text_field :email ,class:"form-control"%></div>
+		</div><br>
+			
+		<div class="form-group">
+			<%= f.label "Mobile " ,class:"col-lg-2 control-label"%><br>
+			<div class="col-lg-10"><%= f.text_field :mobile_phone ,class:"form-control"%></div>
+		</div><br>
 			<%= f.label "Mobile Phone" %><br>
 			<%= f.text_field :mobile_phone %>
 		</p>

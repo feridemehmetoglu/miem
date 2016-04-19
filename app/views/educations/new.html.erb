@@ -1,213 +1,119 @@
+<% if @education.errors.any? %>
+  <div class="alert alert-danger">
+    <b>Form gönderilirken <%= @education.errors.count %> hata ile karşılaşıldı:</b>
+    <ul>
+      <% @education.errors.each do |attr,msg| %>
+      <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+
 <div class="container">
-
   <div class="row">
-
     <h1>Yeni Eğitim Tanımla </h1>
-
     <p>Şubenizdeki Yeni Eğitimleri Burdan Ekleyebilirsiniz</p>
 
-​
-
     <div class="col-md-8">
-
       <div class="form-horizontal">        
-
          <%= form_for @education  do |f| %>
 
+
      <!--  #f.hidden_field :creater_id, value: current_user.id  -->
-
             <div class="form-group">
-
                <label class="col-lg-2 control-label">Eğitim Adı/liste eklicez </label> 
-
                  <div class="col-lg-10">
-
                   <%= f.text_field :name ,class: "form-control" %> 
-
                  </div>
-
             </div>
 
-​
-
             <div class="form-group">
-
                <label class="col-lg-2 control-label">Eğitim Açıklaması </label> 
-
                  <div class="col-lg-10">
-
                   <%= f.text_area :description ,class: "form-control" %> 
-
                 </div>
-
             </div>
 
-​
-
             <div class="form-group">
-
                <label class="col-lg-2 control-label">Eğitim Amacı </label> 
-
                  <div class="col-lg-10">
-
                   <%= f.text_field :purpose ,class: "form-control" %> 
-
                  </div>
-
             </div>
 
-​
-
             <div class="form-group">
-
                <label class="col-lg-2 control-label">Eğitim Yeri </label> 
-
                  <div class="col-lg-10">
-
                   <%= f.text_field :location ,class: "form-control" %> 
-
                  </div>
-
             </div>
 
-​
-
             <div class="form-group">
-
                <label class="col-lg-2 control-label">Eğitim Ücreti</label> 
-
                 <div class="col-lg-4">
-
                  <%= f.text_field :fee ,class: "form-control" %> 
-
                 </div>
-
                <label class="col-lg-3 control-label">Sınav/Belge Ücreti</label> 
-
                 <div class="col-lg-3">
-
                  <%= f.text_field :exam_fee ,class: "form-control" %> 
-
                 </div>
-
             </div>
-
-​
-
             <div class="form-group">
-
                <label class="col-lg-2 control-label">Başlangıç Tarihi</label> 
-
                 <div class="col-lg-4">
-
                  <%= f.date_select :start_date ,class: "form-control", min: Date.today %> 
-
                 </div>
-
                <label class="col-lg-2 control-label">Bitiş Tarihi</label> 
-
                 <div class="col-lg-4">
-
                  <%= f.date_select  :finish_date ,class: "form-control", min: Date.today %> 
-
                 </div>
-
-            </div>  
-
-​
-
-            <div class="form-group">
-
-               <label class="col-lg-2 control-label">Toplam Saat</label> 
-
-                <div class="col-lg-4">
-
-                  <%= f.text_field :total_hour ,class: "form-control" %> 
-
-                </div>
-
-                <label class="col-lg-3 control-label">Kontenjan</label> 
-
-                <div class="col-lg-3">
-
-                  <%= f.text_field :quota ,class: "form-control" %> 
-
-                </div>
-
             </div> 
 
-​
-
-​
+            <div class="form-group">
+               <label class="col-lg-2 control-label">Toplam Saat</label> 
+                <div class="col-lg-4">
+                  <%= f.text_field :total_hour ,class: "form-control" %> 
+                </div>
+                <label class="col-lg-3 control-label">Kontenjan</label> 
+                <div class="col-lg-3">
+                  <%= f.text_field :quota ,class: "form-control" %> 
+                </div>
+            </div> 
 
             <div class="form-group">
-
               <div class="col-lg-4 ">
-
                 <h3>Hangi Meslekler Katılsın</h3>
-
                  <% @jobs.each  do |job| %>
-
                   <%= check_box_tag("job_ids[]",job.id) %>
-
                   <%= label_tag("job",job.name ) %><br>
-
                  <% end %>
-
              </div>
-
              <div class="col-lg-4 "></div>
-
              <div class="col-lg-4 "></div>
-
             </div>
-
-​
-
             <div class="form-group">
-
                <div class="col-lg-12 text-right">
-
                   <div class="row">
-
-                     <p>
-
+                   <p>
                       <%= f.check_box :send_email %> Eğitime Ön Kayıt Yapanlara mail ve sms Gönderilsin mi ? 
 
                      </p>
-
                   </div>
-
                  </div>
-
                <div class="col-lg-2 text-right"></div>
-
             </div>
-
-​
 
             <div class="form-group">
-
               <div class="col-lg-10 text-right"></div>
-
               <div class="col-lg-2 text-right">
-
                <%= f.submit 'Eğitimi Kaydet' ,class: "btn btn-primary"%>
-
               </div>
-
             </div>
-
-​
-
          <% end %>
-
       </div>
-
     </div>
-
   </div>
-
 </div>
 
 ​

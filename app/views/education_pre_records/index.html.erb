@@ -1,4 +1,11 @@
+ 
+
 <div class="container">
+  <% if flash[:notice] %>
+        <div class="alert alert-success">
+          <%= flash[:notice] %></div>
+      
+       <% end %>
 <table class="table">
   <thead>
     <tr>
@@ -31,12 +38,16 @@
 	  <td>
 	  
        </td>
-     
-      <td><%= link_to 'Ön Kayıt', education_pre_record_path(pre) %></td>
-      
+
        
-       
-    </tr>
+      <td>
+
+      <%= link_to 'Ön Kayıt', education_pre_record_path(pre) %>
+
+      </td>
+
+
+     </tr>
    
   </tbody>
  <% end %>
