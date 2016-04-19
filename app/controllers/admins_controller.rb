@@ -9,7 +9,4 @@ class AdminsController < ApplicationController
   	@user_profiles = UserProfile.all
   end
 
-  
- 
-
-end
+ end

@@ -43,14 +43,9 @@ class UserProfilesController < ApplicationController
    
   end
 
-
-# def edit
-#     @author = Author.find(current_author.id)
-#     @author_profile = AuthorProfile.find_by(author_id: @author.id)
-#     end
   def edit
-  	@user= User.find(current_user.id)
-  	@user_profile = UserProfile.find(@user.user_profile.id)
+  	
+  	@user_profile = UserProfile.find(params[:id])
   end
   
   private

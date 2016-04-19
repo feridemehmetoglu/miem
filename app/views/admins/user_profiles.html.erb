@@ -18,7 +18,8 @@
     <tr>
       <td><%=up.name%></td>
       <td><%=up.surname %></td>
-      <td><%=up.admin %></td>
+
+      <td><%= check_box_tag :admin ,1 , up.admin ? true : false %></td>
       <td>
          
       </td>
