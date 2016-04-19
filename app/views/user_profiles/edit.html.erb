@@ -1,51 +1,53 @@
 <% if @user_profile.errors.any? %>
-  <div class="alert alert-danger">
-    <b>Form gönderilirken <%= @user_profile.errors.count %> hata ile karşılaşıldı:</b>
-    <ul>
-      <% @user_profile.errors.each do |attr,msg| %>
-      <li><%= msg %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
-
-<div class="container">
-	<div class="row">
-		<legend> Profilinize Hoşgeldiniz Sayın, <%= @user_profile.name%></legend>
-	 <%= form_for (@user_profile), html: { multipart: true } do |f| %>
-        
-		<div class="form-group">
-			<%= f.label "Name " ,class:"col-lg-2 control-label"%>
-			<div class="col-lg-10"><%= f.text_field :name ,class:"form-control"%></div>
-		</div><br>
-
-		<div class="form-group">
-			<%= f.label "Surname" ,class:"col-lg-2 control-label"%><br>
-			<div class="col-lg-10"><%= f.text_field :surname ,class:"form-control"%></div>
-		</div><br>
-
-			<div class="form-group">
-			<%= f.label "Email" ,class:"col-lg-2 control-label"%><br>
-			<div class="col-lg-10"><%= f.text_field :email ,class:"form-control"%></div>
-		</div><br>
-			
-		<div class="form-group">
-			<%= f.label "Mobile " ,class:"col-lg-2 control-label"%><br>
-			<div class="col-lg-10"><%= f.text_field :mobile_phone ,class:"form-control"%></div>
-		</div>
-
-			<%= f.label "Mobile Phone" %><br>
-			<%= f.text_field :mobile_phone %>
-		</p>
-		<p>
-			<%= f.label "Register Number" %><br>
-			<%= f.text_field :register_no %>
-		</p>
-
-		<p>
-			<%= f.submit %>
-		</p>
-	<% end %>
-
-	</div>
+<div class="alert alert-danger">
+	<b>Form gönderilirken <%= @user_profile.errors.count %> hata ile karşılaşıldı:</b>
+	<ul>
+		<% @user_profile.errors.each do |attr,msg| %>
+		<li><%= msg %></li>
+		<% end %>
+	</ul>
 </div>
+<% end %>
+<div class="form-horizontal">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8">
+				<legend> Profilinize Hoşgeldiniz Sayın, <%= @user_profile.name%></legend>
+				<%= form_for (@user_profile), html: { multipart: true } do |f| %>
+
+				<div class="form-group">
+					<%= f.label "Name " ,class: "col-md-2 control-label"%>
+					<div class="col-md-10"><%= f.text_field :name ,class:"form-control"%></div>
+				</div>
+
+				<div class="form-group">
+					<%= f.label "Surname" ,class: "col-md-2 control-label"%>
+					<div class="col-md-10"><%= f.text_field :surname ,class:"form-control"%></div>
+				</div>
+
+				<div class="form-group">
+					<%= f.label "Email" ,class: "col-md-2 control-label"%>
+					<div class="col-md-10"><%= f.text_field :email ,class:"form-control"%></div>
+				</div>
+
+				<div class="form-group">
+					<%= f.label "Mobile " ,class: "col-md-2 control-label"%>
+					<div class="col-md-10"><%= f.text_field :mobile_phone ,class:"form-control"%></div>
+				</div>
+				<div class="form-group">
+					<%= f.label "Register Number" ,class: "col-md-2 control-label"%>
+					<div class="col-md-10"><%= f.text_field :register_no ,class:"form-control" %></div>
+				</div>
+				<div class="form-group">
+					<div class="col-md-10 col-md-offset-2"><%= f.submit "Güncelle", class: "btn btn-info" %></div>
+				</div>
+
+				<% if current_user && current_user.user_profile.admin? %>
+                    <label>ddfdd</label>
+				<% end %>
+					
+					<% end %>
+				</div>
+			</div>
+		</div>
+	</div>

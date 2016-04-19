@@ -1,6 +1,6 @@
 <div class="container">   
  <div class="row">
-         <div class="col-sm-6">
+         <div class="col-md-6">
             <div class="row">   
 
 
@@ -11,19 +11,30 @@
   <fieldset>
     <legend> Profilinize Hoşgeldiniz Sayın, <%= @user_profile.name%></legend>
     <div class="form-group">
-
-       <div class="col-md-3"><label>Ad:</label></div>
+       <div class="col-md-2"><label>Ad:</label></div>
        <div class="col-md-9"><%= @user_profile.name%></div>
-
-      <!-- <label for="inputEmail" class="col-lg-2 control-label">Email</label>
-      <div class="col-lg-10">
-        <input class="form-control" id="inputEmail" placeholder="Email" type="text">
-      </div> -->
     </div>
-     
+     <div class="form-group">
+       <div class="col-md-2"><label>Soyad:</label></div>
+       <div class="col-md-9"><%= @user_profile.surname%></div>
+    </div>
+     <div class="form-group">
+       <div class="col-md-2"><label>Email:</label></div>
+       <div class="col-md-9"><%= @user_profile.email%></div>
+    </div>
+     <div class="form-group">
+       <div class="col-md-2"><label>Mobile:</label></div>
+       <div class="col-md-9"><%= @user_profile.mobile_phone%></div>
+    </div>
+     <div class="form-group">
+       <div class="col-md-2"><label>Register No:</label></div>
+       <div class="col-md-9"><%= @user_profile.register_no%></div>
+    </div>
                 
     </div>
-               <%= link_to "Profilimi Düzenle",edit_user_profile_path(@user_profile), class: "btn btn-info" %>
+    <div class="form-group">
+              <div class="col-md-10 col-md-offset-2"> <%= link_to "Profil Düzenle",edit_user_profile_path(@user_profile), class: "btn btn-info" %></div>
+             </div>
 </fieldset>
 </form>
            </div>

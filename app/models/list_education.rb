@@ -1,0 +1,2 @@
+class ListEducation < ApplicationRecord
+end

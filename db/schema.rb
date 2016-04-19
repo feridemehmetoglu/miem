@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160415141727) do
+ActiveRecord::Schema.define(version: 20160419112125) do
 
   create_table "certificates", force: :cascade do |t|
     t.string   "name"
@@ -87,6 +87,12 @@ ActiveRecord::Schema.define(version: 20160415141727) do
   add_index "job_educations", ["job_id"], name: "index_job_educations_on_job_id"
 
   create_table "jobs", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "list_educations", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
