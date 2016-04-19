@@ -2,7 +2,7 @@ class EducationPreRecordsController < ApplicationController
 
 	def index
 	
-		@pre_education = Education.where("finish_date <=?", Date.yesterday) #finish_date dün ve daha önce olan tarihdeki eğitimleri getirir
+		@pre_education = Education.where("finish_date <=?", Date.yesterday).distinct #finish_date dün ve daha önce olan tarihdeki eğitimleri getirir
 	end
 
 	def show

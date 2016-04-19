@@ -11,10 +11,14 @@
   <fieldset>
     <legend> Profilinize Hoşgeldiniz Sayın, <%= @user_profile.name%></legend>
     <div class="form-group">
-      <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+
+       <div class="col-md-3"><label>Ad:</label></div>
+       <div class="col-md-9"><%= @user_profile.name%></div>
+
+      <!-- <label for="inputEmail" class="col-lg-2 control-label">Email</label>
       <div class="col-lg-10">
         <input class="form-control" id="inputEmail" placeholder="Email" type="text">
-      </div>
+      </div> -->
     </div>
      
                 
