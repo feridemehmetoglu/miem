@@ -1,20 +1,16 @@
-<% if @education.errors.any? %>
-  <div class="alert alert-danger">
-    <b>Form gönderilirken <%= @education.errors.count %> hata ile karşılaşıldı:</b>
-    <ul>
-      <% @education.errors.each do |attr,msg| %>
-      <li><%= msg %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
 
 
 <div class="container">
   <div class="row">
     <h1>Yeni Eğitim Tanımla </h1>
     <p>Şubenizdeki Yeni Eğitimleri Burdan Ekleyebilirsiniz</p>
-
+     <% if flash[:notice] %>
+     <div class="alert alert-warning alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <strong>Oluşmadı!</strong> 
+                     <div class="notice"> <%= flash[:notice] %></div>
+       </div>
+        <% end %>
     <div class="col-md-8">
       <div class="form-horizontal">        
          <%= form_for @education  do |f| %>

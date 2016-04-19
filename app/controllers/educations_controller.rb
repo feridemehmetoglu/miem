@@ -20,17 +20,20 @@ class EducationsController < ApplicationController
   def create
    
     @education = Education.new(education_params)
-    
+    @jobs =Job.all
+      
       if @education.save
           education = Education.last
-          jobeducation = params.require(:job_ids)
-          jobeducation.each do |job_id|
-            JobEducation.create(job_id: job_id, education_id: education.id)
+          jobeducation = params.require(:job_ids) 
+            unless jobeducation == nil
+             jobeducation.each do |job_id|
+             JobEducation.create(job_id: job_id, education_id: education.id)
+            end
           end
-       redirect_to educations_path
-     
+        
+       redirect_to education_path(@education) , notice: "Eğitim başarı ile oluşturuldu."
       else
-        render 'new'
+       redirect_to new_education_path, notice: "Eksik Veya Yanlış Giriş Egitimi oluşturulamadı.  " 
      
       end
 
