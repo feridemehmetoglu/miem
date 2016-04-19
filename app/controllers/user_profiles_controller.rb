@@ -14,7 +14,7 @@ class UserProfilesController < ApplicationController
       @userprofile = UserProfile.new
 
        else 
-        redirect_to user_profile_path(@userprofile)
+        redirect_to edit_user_profile_path(@userprofile)
       end
   end
 
@@ -38,7 +38,7 @@ class UserProfilesController < ApplicationController
   	if @user_profile.update(user_profile_params)
         redirect_to user_profile_path
       else
-        render 'edit' 
+        render 'edit'
       end
    
   end
@@ -50,7 +50,7 @@ class UserProfilesController < ApplicationController
 #     end
   def edit
   	@user= User.find(current_user.id)
-  	@user_profile = UserProfile.find(params[:id])
+  	@user_profile = UserProfile.find(@user.user_profile.id)
   end
   
   private
