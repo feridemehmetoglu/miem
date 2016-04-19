@@ -3,13 +3,15 @@
   <div class="row">
     <legend><strong>Yeni Eğitim Tanımla</strong>&nbsp&nbsp<small>Şubemizdeki yeni eğitimlere burdan katılabilirsiniz.</small></legend>
     
-
-    <div class="alert alert-success alert-dismissible" role="alert">
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      <strong>Tebrikler!</strong>  <% if flash[:notice] %>
-      <div class="notice"> <%= flash[:notice] %></div>
-      <% end %>
+  
+     <% if flash[:notice] %>
+     <div class="alert alert-success alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong>Tebrikler!</strong>  
+        <div class="notice"> <%= flash[:notice] %></div>
+    <% end %>
     </div>
+    
 
     <div class="col-md-10">
       <div class="form-horizontal">

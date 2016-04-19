@@ -45,6 +45,5 @@ group :development do
   gem 'spring'
 end
 
-  gem 'devise', git: 'git@github.com:plataformatec/devise.git'
-  gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
-  
+gem 'devise', git: 'git@github.com:plataformatec/devise.git'
+gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'

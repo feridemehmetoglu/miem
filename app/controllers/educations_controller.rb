@@ -55,6 +55,12 @@ class EducationsController < ApplicationController
      
   end
 
+  def my_educations
+    @user = User.find(current_user.id)
+    @my_education = @user.educations
+
+  end
+
   private
 
   def set_education
