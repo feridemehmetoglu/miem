@@ -8,5 +8,7 @@ class AdminsController < ApplicationController
   def user_profiles
   	@user_profiles = UserProfile.all
   end
-
+ def method_name
+ 	
+ end
  end
