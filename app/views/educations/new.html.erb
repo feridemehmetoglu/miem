@@ -11,7 +11,7 @@
                      <div class="notice"> <%= flash[:notice] %></div>
        </div>
         <% end %>
-    <div class="col-md-8">
+    <div class="col-md-10">
       <div class="form-horizontal">        
          <%= form_for @education  do |f| %>
 
@@ -50,8 +50,8 @@
                 <div class="col-lg-4">
                  <%= f.text_field :fee ,class: "form-control" %> 
                 </div>
-               <label class="col-lg-3 control-label">Sınav/Belge Ücreti</label> 
-                <div class="col-lg-3">
+               <label class="col-lg-2 control-label">Sınav/Belge Ücreti</label> 
+                <div class="col-lg-4">
                  <%= f.text_field :exam_fee ,class: "form-control" %> 
                 </div>
             </div>
