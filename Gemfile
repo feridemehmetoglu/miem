@@ -57,3 +57,5 @@ gem 'devise'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 #Flexible authentication solution for Rails
 gem 'will_paginate', github: 'mislav/will_paginate', branch: 'master'
+
+ gem "puma" 

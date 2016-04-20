@@ -101,6 +101,7 @@ GEM
       mini_portile2 (~> 2.0.0.rc2)
     orm_adapter (0.5.0)
     pg (0.18.4)
+    puma (3.4.0)
     rack (2.0.0.alpha)
       json
     rack-test (0.6.3)
@@ -191,6 +192,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   pg
+  puma
   rails (>= 5.0.0.beta1)
   rails_12factor
   sass-rails (~> 5.0)
