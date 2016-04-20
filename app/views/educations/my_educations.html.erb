@@ -1,26 +1,30 @@
-  <table class="table table-striped  ">
-  <thead>
-    <tr>
-      
-      <th>Eğitim</th>
-      <th>Şube</th>
-      <th>Başlama Tarihi</th>
-      <th>Bitiş Tarihi</th>
-      <th>Kontenjan</th>
-       <th>Kayıt</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @my_education.each do |education| %>
-    <tr>
-      <td><%=education.name%></td>
-      <td><%=education.location%></td>
-      <td><%=education.start_date%></td>
-      <td><%=education.finish_date%></td>
-      <td><%=education.users.count%>/<%=education.quota%></td>
-      <td><%= link_to 'Göster', education_path(education)%></td>
-    </tr>
-      <% end %>
-  </tbody>
+  <div class="container">
 
-</table> 
+    <table class="table table-striped  ">
+      <thead>
+        <tr>
+          
+          <th>Eğitim</th>
+          <th>Şube</th>
+          <th>Başlama Tarihi</th>
+          <th>Bitiş Tarihi</th>
+          <th>Kontenjan</th>
+          <th>Kayıt</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @my_education.each do |education| %>
+        <tr>
+          <td><%=education.name%></td>
+          <td><%=education.location%></td>
+          <td><%=education.start_date%></td>
+          <td><%=education.finish_date%></td>
+          <td><%=education.users.count%>/<%=education.quota%></td>
+          <td><%= link_to 'Göster', education_path(education)%></td>
+        </tr>
+        <% end %>
+      </tbody>
+
+    </table> 
+
+  </div>

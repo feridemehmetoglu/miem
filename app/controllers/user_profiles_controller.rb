@@ -40,12 +40,17 @@ class UserProfilesController < ApplicationController
       else
         render 'edit'
       end
-   
   end
 
   def edit
-  	
-  	@user_profile = UserProfile.find(params[:id])
+
+      @user_profile = UserProfile.find(params[:id])
+
+  end
+
+  def my_profile
+     @user_profile = UserProfile.find(current_user.user_profile.id)
+     redirect_to  user_profile_path(@user_profile)
   end
   
   private

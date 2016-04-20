@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'admins/index'
   get 'admins/user_profiles'
   get '/my_educations', to: 'educations#my_educations'
+  get '/my_profile', to: 'user_profiles#my_profile'
   
   devise_for :admins
   devise_for :users
