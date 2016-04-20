@@ -1,13 +1,15 @@
-<% if current_user && current_user.user_profile.admin? %>
-<div class="container">
-	<div class="row">
-		<legend><h1>Admin İşlemleri</h1></legend>
 
-		<p><%= link_to 'Eğitim Ekle ',new_education_path, class: "btn btn-primary btn-sm"%></p>
-		<p><%= link_to 'Admin Ata ',admins_user_profiles_path 	, class: "btn btn-primary btn-sm"%></p>
-		<p><a class="btn btn-primary btn-sm">Sınav Ekle</a></p>
-		<p><a class="btn btn-primary btn-sm">Sınav S. Ekle</a></p>
-		<p><a class="btn btn-primary btn-sm">Sertifika Ekle</a></p>
-	</div>
-</div>
-<%end%>
+
+  <% if current_user && current_user.user_profile.admin? %>
+    <div class="container">
+    	<div class="row">
+    		<legend><h1>Admin İşlemleri</h1></legend>
+
+    		<p><%= link_to 'Eğitim Ekle ',new_education_path, class: "btn btn-primary btn-sm"%></p>
+    		<p><%= link_to 'Admin Ata ',admins_user_profiles_path 	, class: "btn btn-primary btn-sm"%></p>
+    		<p><a class="btn btn-primary btn-sm">Sınav Ekle</a></p>
+    		<p><a class="btn btn-primary btn-sm">Sınav S. Ekle</a></p>
+    		<p><a class="btn btn-primary btn-sm">Sertifika Ekle</a></p>
+    	</div>
+    </div>
+  <%end%>

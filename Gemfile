@@ -47,3 +47,5 @@ end
 
 gem 'devise', git: 'git@github.com:plataformatec/devise.git'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
+#Flexible authentication solution for Rails
+gem 'will_paginate', github: 'mislav/will_paginate', branch: 'master'
