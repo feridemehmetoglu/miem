@@ -30,7 +30,11 @@ class UserProfilesController < ApplicationController
   def update
   	@user_profile = UserProfile.find(params[:id])
   	if @user_profile.update(user_profile_params)
-        redirect_to user_profile_path
+          if current_user && current_user.user_profile.admin?
+             redirect_to admins_user_profiles_path
+           else
+            redirect_to user_profile_path
+          end
       else
         render 'edit'
       end
@@ -39,6 +43,7 @@ class UserProfilesController < ApplicationController
   def edit
      
       @user_profile = UserProfile.find(params[:id])
+      
 
   end
 

@@ -1,6 +1,7 @@
 <div class="container">
   <div class="row">
-   <h1>Eğitimler İçin Meslek Ekle </h1>
+    <div class="col-md-8">
+   <legend>Eğitimler İçin Meslek Ekle </legend> 
     <p>Eğitimler İçin Yeni Meslek Burdan Ekleyebilirsiniz</p>
   
     <div class="col-md-8">
@@ -11,17 +12,19 @@
     <!--  #f.hidden_field :creater_id, value: current_user.id  -->
     
      <div class="form-group">
-       <label class="col-lg-2 control-label">Meslek Adı </label> 
-       <div class="col-lg-10">
+       <label class="col-lg-3 control-label">Meslek Adı </label> 
+       <div class="col-lg-9">
         <%= f.text_field :name ,class: "form-control" %> 
       </div>
     </div>
 
    <div class="form-group">
-      <%= f.submit 'Mesleği Kaydet' ,class: "btn btn-primary"%>
+    <div class="col-md-3"></div>
+      <div class="col-md-9"><%= f.submit 'Mesleği Kaydet' ,class: "btn btn-primary"%></div>
    </div>
     <% end %>
   </div>
+ </div>
  </div>
 </div>
 </div>
