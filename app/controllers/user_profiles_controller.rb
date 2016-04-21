@@ -7,19 +7,13 @@ class UserProfilesController < ApplicationController
 
   end
   def new
-    @user = User.find(current_user.id)
-    @userprofile = UserProfile.where(user_id: @user.id)
 
-    unless @userprofile.any? #userprofile yoksa
-      @userprofile = UserProfile.new
+      @user_profile = UserProfile.new
 
-       else 
-        redirect_to edit_user_profile_path(@userprofile)
-      end
   end
 
   def create
-    @userprofile = UserProfile.new(user_profile_params)
+    @user_profile = UserProfile.new(user_profile_params)
     @userprofile.save
     redirect_to root_path
 
@@ -43,14 +37,17 @@ class UserProfilesController < ApplicationController
   end
 
   def edit
-
+     
       @user_profile = UserProfile.find(params[:id])
 
   end
 
   def my_profile
-     @user_profile = UserProfile.find(current_user.user_profile.id)
-     redirect_to  user_profile_path(@user_profile)
+    if current_user.user_profile
+      @user_profile = UserProfile.find(current_user.user_profile.id)
+    else
+      redirect_to new_user_profile_path
+    end
   end
   
   private
