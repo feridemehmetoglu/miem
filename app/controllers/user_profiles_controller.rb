@@ -14,7 +14,7 @@ class UserProfilesController < ApplicationController
 
   def create
     @user_profile = UserProfile.new(user_profile_params)
-    @userprofile.save
+    @user_profile.save
     redirect_to root_path
 
     
@@ -45,6 +45,7 @@ class UserProfilesController < ApplicationController
   def my_profile
     if current_user.user_profile
       @user_profile = UserProfile.find(current_user.user_profile.id)
+      redirect_to edit_user_profile_path(@user_profile)
     else
       redirect_to new_user_profile_path
     end
