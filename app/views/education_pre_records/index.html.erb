@@ -19,7 +19,7 @@
           <th>Başlama T.</th>
           <th>Bitiş T.</th>
           <th>Top.Süre</th>
-          
+          <th>Ön Kayıt Sayısı</th>
         </tr>
       </thead>
       <% @pre_education.each  do |pre|%>
@@ -35,10 +35,8 @@
           <td><%=pre.start_date %></td>
           <td><%=pre.finish_date%></td>
           <td><%=pre.total_hour%></td>
-          <td>
-           
-          </td>
-          <td>
+          <td><%=pre.education_pre_records.count%></td>
+           <td>
             <%= link_to 'Ön Kayıt', education_pre_record_path(pre) %>
           </td>
         </tr>
