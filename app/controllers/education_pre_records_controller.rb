@@ -8,7 +8,10 @@ class EducationPreRecordsController < ApplicationController
       if user_signed_in?
 
            @pre = Education.find(params[:id])
-            if EducationPreRecord.create(user_id: current_user.id , education_id: @pre.id  ) 
+            if EducationPreRecord.exists?(user_id: current_user.id, education_id:@pre.id)
+               redirect_to education_pre_records_path, notice: "Zaten önkaydınız mevcut!"
+              else
+              EducationPreRecord.create(user_id: current_user.id , education_id: @pre.id  ) 
             redirect_to education_pre_records_path , notice: "Önkaydınız yapılmıştır!"
             end
       else
