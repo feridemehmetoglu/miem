@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'admins/user_profiles'
   get '/my_educations', to: 'educations#my_educations'
   get '/my_profile', to: 'user_profiles#my_profile'
+  get '/cancel/:id' , to: 'education_records#cancel', as:"cancel"
   
   devise_for :admins
   devise_for :users

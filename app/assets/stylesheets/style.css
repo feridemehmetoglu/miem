@@ -92,3 +92,6 @@
  font-weight: normal;
  font-size: 10;
 }
+.red{color:red;}
+.red:hover{color:red; text-decoration: underline;}
+.red:visited{color:red;}
