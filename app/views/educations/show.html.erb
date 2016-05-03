@@ -1,123 +1,125 @@
 
-<div class="container">
+<div class="container font">
   <div class="row">
-    <legend><strong>Yeni Eğitim Tanımla</strong>&nbsp&nbsp<small>Şubemizdeki yeni eğitimlere burdan katılabilirsiniz.</small></legend>
+    <legend>Yeni Eğitim Tanımla&nbsp&nbsp<small>Şubemizdeki yeni eğitimlere burdan katılabilirsiniz.</small></legend>
     
-  
-     <% if flash[:notice] %>
-     <div class="alert alert-success alert-dismissible" role="alert">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+    <% if flash[:notice] %>
+    <div class="alert alert-success alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       
-        <div class="notice"> <%= flash[:notice] %></div>
-    <% end %>
+      <div class="notice"> <%= flash[:notice] %></div>
+      <% end %>
     </div>
     
 
-    <div class="col-md-10">
+    <div class="col-md-12">
       <div class="form-horizontal">
         <fieldset>   
 
           <div class="form-group">
-           <label class="col-md-3 control-label">Eğitim Adı </label> 
-           <div class="col-md-9">
+           <label class="col-md-2 control-label">Eğitim Adı </label> 
+           <div class="col-md-7">
              <ul class="breadcrumb">
               <li class="active"> <%= @education.name  %> </li>
-             </ul>
-           
+            </ul>
+
           </div>
         </div>
 
         <div class="form-group">
-         <label class="col-md-3 control-label">Eğitim Açıklaması </label> 
-         <div class="col-md-9">
+         <label class="col-md-2 control-label">Eğitim Açıklaması </label> 
+         <div class="col-md-7">
           <ul class="breadcrumb">
-              <li class="active"> <%= @education.description  %>  </li>
+            <li class="active"> <%= @education.description  %>  </li>
           </ul>
         </div>
       </div>
 
       <div class="form-group">
-       <label class="col-md-3 control-label">Eğitim Amacı </label> 
-       <div class="col-md-9">
+       <label class="col-md-2 control-label">Eğitim Amacı </label> 
+       <div class="col-md-7">
         <ul class="breadcrumb">
-              <li class="active"> <%= @education.purpose  %>  </li>
-          </ul>
+          <li class="active"> <%= @education.purpose  %>  </li>
+        </ul>
         
       </div>
     </div>
 
     <div class="form-group">
-     <label class="col-md-3 control-label">Eğitim Yeri </label> 
-     <div class="col-md-9">
+     <label class="col-md-2 control-label">Eğitim Yeri </label> 
+     <div class="col-md-7">
       <ul class="breadcrumb">
-              <li class="active"> <%= @education.location  %>  </li>
-          </ul>
+        <li class="active"> <%= @education.location  %>  </li>
+      </ul>
     </div>
   </div>
 
   <div class="form-group">
-   <label class="col-md-3 control-label">Eğitim Ücreti</label> 
-   <div class="col-md-3">
+   <label class="col-md-2 control-label">Eğitim Ücreti</label> 
+   <div class="col-md-2">
      <ul class="breadcrumb">
-              <li class="active"> <%= @education.fee  %>  </li>
-          </ul>
-   </div>
-   <label class="col-md-3 control-label">Sınav/Belge Ücreti</label> 
-   <div class="col-md-3">
-     <ul class="breadcrumb">
-              <li class="active"> <%= @education.exam_fee  %>  </li>
-          </ul>
-   </div>
- </div>
-
- <div class="form-group">
-   <label class="col-md-3 control-label">Başlangıç Tarihi</label> 
-   <div class="col-md-3">
-     <ul class="breadcrumb">
-              <li class="active"> <%= @education.start_date  %>  </li>
-      </ul>
-   </div>
-   <label class="col-md-3 control-label">Bitiş Tarihi</label> 
-   <div class="col-md-3">
-     <ul class="breadcrumb">
-              <li class="active"> <%= @education.finish_date  %>  </li>
-      </ul>
-   </div>
- </div>  
-
- <div class="form-group">
-   <label class="col-md-3 control-label">Toplam Saat</label> 
-   <div class="col-md-3">
-    <ul class="breadcrumb">
-              <li class="active"> <%= @education.total_hour  %>  </li>
+      <li class="active"> <%= @education.fee  %>  </li>
     </ul>
   </div>
-  <label class="col-md-3 control-label">Kontenjan</label> 
-  <div class="col-md-3">
-    <ul class="breadcrumb">
-              <li class="active"> <%= @education.quota  %>  </li>
-    </ul>  
-  </div>
+  <label class="col-md-3 control-label">Sınav/Belge Ücreti</label> 
+  <div class="col-md-2">
+   <ul class="breadcrumb">
+    <li class="active"> <%= @education.exam_fee  %>  </li>
+  </ul>
+</div>
+</div>
+
+<div class="form-group">
+ <label class="col-md-2 control-label">Başlangıç Tarihi</label> 
+ <div class="col-md-2">
+   <ul class="breadcrumb">
+    <li class="active"> <%= @education.start_date  %>  </li>
+  </ul>
+</div>
+<label class="col-md-3 control-label">Bitiş Tarihi</label> 
+<div class="col-md-2">
+ <ul class="breadcrumb">
+  <li class="active"> <%= @education.finish_date  %>  </li>
+</ul>
+</div>
+</div>  
+
+<div class="form-group">
+ <label class="col-md-2 control-label">Toplam Saat</label> 
+ <div class="col-md-2">
+  <ul class="breadcrumb">
+    <li class="active"> <%= @education.total_hour  %>  </li>
+  </ul>
+</div>
+<label class="col-md-3 control-label">Kontenjan</label> 
+<div class="col-md-2">
+  <ul class="breadcrumb">
+    <li class="active"> <%= @education.quota  %>  </li>
+  </ul>  
+</div>
 </div> 
 
 
 <div class="form-group">
-  <div class="col-md-3 ">
-    <h3>Bu Meslekler Katılabilir</h3>
-
-  </div>
-  <div class="col-md-9"><% @education.jobs.each  do |job| %>
+  <div class="col-md-4 col-md-offset-2 ">
+   <legend><strong> Bu Meslekler Katılabilir</strong></legend>
+  </div> 
+</div>
+<div class="form-group">
+ <div class="col-md-3 col-md-offset-2"><% @education.jobs.each  do |job| %>
     <div class="well well-sm">
-     <%= job.name %><br>
-    </div>
-  
-    <% end %></div>
+      <%= job.name %><br>
+   </div>
+ <% end %>
+</div>
+</div>
+
+<div class="form-group">
+  <div class="col-md-2 col-md-offset-7"> 
+    <%= link_to 'Eğitime Kayıt ol', education_record_path(@education), class: "btn btn-info"  %> 
   </div>
-  <div class="form-group">
-    <div class="col-md-2 col-md-offset-10"> 
-      <%= link_to 'Eğitime Kayıt ol', education_record_path(@education), class: "btn btn-info"  %> 
-    </div>
-  </div>
+</div>
 </fieldset>     
 </div>
 </div>
