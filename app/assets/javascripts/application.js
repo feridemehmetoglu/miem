@@ -16,8 +16,7 @@
 //= require_tree .
 //= require bootstrap-sprockets
 
- <script><script type="text/javascript">
-  WebFontConfig = {
+
     google: { families: [ 'Open+Sans::latin,latin-ext' ] }
   };
   (function() {
@@ -27,5 +26,5 @@
     wf.async = 'true';
     var s = document.getElementsByTagName('script')[0];
     s.parentNode.insertBefore(wf, s);
-  })(); </script>
-   </script>
+  })(); 
+  
