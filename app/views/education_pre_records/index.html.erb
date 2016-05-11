@@ -13,16 +13,14 @@
       <thead>
         <tr>
           
-          <th>Eğitim Adı</th>
-          <th>Açıklama</th>
-          <th>Amaç</th>
-          <th>Konum</th>
-          <th>Ücret</th>
-          <th>Sınav Ücreti</th>
-          <th>Başlama T.</th>
-          <th>Bitiş T.</th>
-          <th>Top.Süre</th>
-          <th>Ön Kayıt Sayısı</th>
+          <th><small>Eğitim Adı</small></th>
+          <th><small>Açıklama</small></th>
+          <th><small>Amaç</small></th>
+          <th><small>Konum</small></th>
+          <th><small>Ücret</small></th>
+          <th><small>Sınav Ücreti</small></th>
+          <th><small>Top.Süre</small></th>
+          <th><small>Kayıt Durumu</small></th>
         </tr>
       </thead>
       <% @pre_education.each  do |pre|%>
@@ -35,8 +33,6 @@
           <td><%=pre.location%></td>
           <td><%=pre.fee%></td>
           <td><%=pre.exam_fee %></td>
-          <td><%=pre.start_date %></td>
-          <td><%=pre.finish_date%></td>
           <td><%=pre.total_hour%></td>
           <td><%=pre.education_pre_records.count%></td>
            <td>
