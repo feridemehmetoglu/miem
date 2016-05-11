@@ -17,6 +17,7 @@
 //= require bootstrap-sprockets
 
 
+  WebFontConfig = {
     google: { families: [ 'Open+Sans::latin,latin-ext' ] }
   };
   (function() {
